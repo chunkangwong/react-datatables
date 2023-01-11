@@ -1,27 +1,21 @@
-import "datatables.net";
-import "datatables.net-dt/css/jquery.dataTables.css";
+import "datatables.net-dt";
+import { Config } from "datatables.net-dt";
 import $ from "jquery";
 import { useEffect, useRef } from "react";
-import data from "./data";
 
-export function DataTable() {
+export function DataTable({ ...props }: Config) {
   const dataTableRef = useRef<HTMLTableElement>(null);
 
   useEffect(() => {
-    const dataTable = $(dataTableRef.current!).DataTable({
-      data: data,
-      columns: [{ data: "name" }, { data: "position" }],
+    const dt = $(dataTableRef.current!).DataTable({
+      ...props,
     });
     return () => {
-      dataTable.destroy();
+      dt.destroy();
     };
   }, []);
 
-  return (
-    <div>
-      <table className="display" width="100%" ref={dataTableRef}></table>
-    </div>
-  );
+  return <table ref={dataTableRef}></table>;
 }
 
 export default DataTable;
