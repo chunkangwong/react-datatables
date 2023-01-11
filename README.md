@@ -4,7 +4,7 @@ A demonstration on encapsulating [datatables](https://datatables.net/) library i
 
 ## Quick Usage Guide
 
-Give an JSON object array as the data source, and the columns you want to display:
+Given an JSON object array as the data source, and the columns you want to display:
 
 ```js
 const data = [
