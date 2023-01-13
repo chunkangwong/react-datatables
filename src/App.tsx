@@ -1,5 +1,5 @@
 import "datatables.net-dt/css/jquery.dataTables.css";
-import DataTable from "./DataTable";
+import ReactDataTables from "./ReactDataTables";
 
 const data = [
   {
@@ -28,7 +28,7 @@ const columns = [
 ];
 
 const EmployeeTable = () => {
-  return <DataTable data={data} columns={columns} />;
+  return <ReactDataTables data={data} columns={columns} />;
 };
 
 function App() {
